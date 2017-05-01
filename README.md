@@ -19,12 +19,12 @@ $ wt create --name accounts webtask.js -p {WEBTASK_CONTAINER} --ignore-package-j
 
 ```
 The above command would create a webtask and give you a url like this
-```
+
 Webtask created
 
 You can access your webtask at the following url:
 
-https://{tenant}.auth0.com/accounts
+`https://{tenant}.auth0.com/accounts`
 
 ### Run Locally
 

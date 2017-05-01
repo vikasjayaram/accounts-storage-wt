@@ -5,7 +5,6 @@ const express = require('express');
 const Webtask = require('webtask-tools');
 const tools = require('auth0-extension-tools');
 const randomize  = require('randomatic');
-const session = require('express-session');
 const app     = express();
 
 const COLLECTION = 'accounts';
