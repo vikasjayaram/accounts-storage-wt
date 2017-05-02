@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
   next();
 });
 // get one record of the requested account
-app.get('/:account', function (req, res) {
+app.get('/accounts/:account', function (req, res) {
 
   getRecord(req.db, req.params.account, function (error, user) {
     if (error) return res.status(400).json({error: error});
@@ -31,21 +31,21 @@ app.get('/:account', function (req, res) {
   });
 });
 // delete one record of the requested account
-app.delete('/:account', function (req, res) {
+app.delete('/accounts/:account', function (req, res) {
   deleteRecord(req.db, req.params.account, function (error, hasBeenDeleted) {
     if (error) return res.status(400).json({error: error});
     return res.sendStatus(204);
   });
 });
 // Get all records
-app.get('/', function (req, res) {
+app.get('/accounts', function (req, res) {
   getRecords(req.db, function (error, users) {
     if (error) return res.status(400).json({error: error});
     return res.status(200).json(users);
   });
 });
 // create a record for the user.
-app.post('/', function (req, res) {
+app.post('/account', function (req, res) {
   setRecord(req.db, req.body.Digits, function (error, user) {
     if (error) return res.status(400).json({error: error});
     else {
